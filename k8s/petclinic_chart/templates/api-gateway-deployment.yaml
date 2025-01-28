@@ -29,13 +29,17 @@ spec:
         kompose.version: 1.34.0 (cbf2835db)
       labels:
         io.kompose.service: api-gateway
-    spec:
+    spec:  
       containers:
         - image: '{{ .Values.IMAGE_TAG_API_GATEWAY }}'
           name: api-gateway
           ports:
             - containerPort: 8080
               protocol: TCP
+      initContainers:
+        - name: init-discovery-server
+          image: busybox
+          command: ['sh', '-c', 'until nc -z discovery-server:8761; do echo waiting for discovery-server; sleep 2; done;']              
       imagePullSecrets:
         - name: regcred
       restartPolicy: Always

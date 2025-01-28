@@ -27,7 +27,7 @@ spec:
           name: grafana-server
           ports:
             - containerPort: 3000
-              protocol: TCP
+              protocol: TCP             
       imagePullSecrets:
         - name: regcred
       restartPolicy: Always
