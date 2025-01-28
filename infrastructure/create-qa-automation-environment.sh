@@ -1,3 +1,5 @@
+#This script shouldn't be used in one time. It should be applied step by step like above
+
 # Environment variables
 ANS_KEYPAIR="petclinic-ansible-test-dev.key"
 AWS_REGION="us-east-1"
