@@ -1,4 +1,4 @@
-mykey = "clarusway"
+mykey = "petclinic-rancher"
 ami = "ami-05576a079321f21f8"
 region = "us-east-1"
 instance_type = "t3a.medium"
